@@ -20,9 +20,6 @@ from tkinter import filedialog
 from makeshortcut import winmakeshortcut
 
 CONFIG = Path.home() / ".OnedriveShortcuts.json"
-lnktext = r'https://bruker.sharepoint.com/:x:/r/sites/Cobra-AFMi-Project/Freigegebene%20Dokumente/10%20Mfg%20Engineering%20and%20Quality/20260406%20-%20Release%20Book%20Population%20Timing%20(incl%20Design%20Review,%20dFMEA,%20pFMEA).xlsx?d=wcf834d7961874029a50a85c803123dec&csf=1&web=1&e=J6aby0'
-"C:\Program Files (x86)\Microsoft Office\root\Office16\EXCEL.EXE" "https://bruker.sharepoint.com/sites/Cobra-AFMi-Project/Freigegebene Dokumente/10 Mfg Engineering and Quality/20260406 - Release Book Population Timing (incl Design Review, dFMEA, pFMEA).xlsx"
-"C:\Program Files (x86)\Microsoft Office\root\Office16"
 
 @dataclass
 class Settings:
@@ -142,7 +139,7 @@ class Main(tk.Frame):
 
         frm = ttk.LabelFrame(self, text="Paste in sharepoint link:")
         frm.pack(fill=tk.X, expand=True)
-        self.sp_link_var = tk.StringVar(value = lnktext)
+        self.sp_link_var = tk.StringVar()
         ent = ttk.Entry(frm, textvariable=self.sp_link_var)
         ent.pack(fill=tk.X, expand=True)
         ent.focus()
